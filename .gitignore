@@ -1,0 +1,6 @@
+target/
+*.bak
+config.es.yml
+.idea/
+*.iml
+.vscode/

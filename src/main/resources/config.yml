@@ -1,0 +1,345 @@
+# ==========================================================
+#  CustomJoinMessages
+#  Placeholders: {player} / {displayname} / {prefix} / {suffix} (LuckPerms) + any PlaceholderAPI placeholder. Colors: &a, &l and &#RRGGBB
+#  Each message's permission: customjoin.message.<id>
+# ==========================================================
+
+settings:
+  # Used when the player has NO message equipped.
+  # "" = vanilla message, "none" = hide it, any other text = that text
+  # Tip: move your EssentialsX custom-join-message here and set it to "none" in Essentials.
+  default-join: ""
+  default-leave: ""
+  # Fills {prefix} / {suffix} with the player's LuckPerms rank prefix/suffix
+  luckperms-prefix: true
+  # Optional: what {prefix} shows instead of the LuckPerms prefix (PlaceholderAPI allowed), e.g. '%vault_prefix%'
+  prefix-format: ''
+  sounds:
+    open: "block.chest.open"
+    equip: "entity.player.levelup"
+    unequip: "ui.button.click"
+    clear: "entity.item.break"
+    page: "item.book.page_turn"
+    redeem: "entity.player.levelup"
+
+discordsrv:
+  # Sends the custom join/leave messages to Discord and turns DiscordSRV's own join/leave messages off.
+  # Set to false to give them back to DiscordSRV.
+  enabled: true
+  # DiscordSRV channel name ("join" falls back to your main channel, same as DiscordSRV)
+  channel: "join"
+  # true = embed with the player's head (like DiscordSRV), false = plain text using the formats below
+  embed: true
+  join-color: "#45D6C6"
+  leave-color: "#F06D76"
+  join-format: ":inbox_tray: {message}"
+  leave-format: ":outbox_tray: {message}"
+
+vouchers:
+  # /jm voucher <id> [player] [amount] - right-click the item to unlock the message
+  material: NAME_TAG
+  name: '{name} &#91A0B5Voucher'
+  lore:
+    - ''
+    - ' &#91A0B5Unlocks a new join message.'
+    - ''
+    - ' &#45D6C6▶ Right-click to redeem!'
+  glow: true
+  # Equip the message right after redeeming it
+  auto-equip: true
+  # Console commands that give the permission. {player}, {uuid}, {permission}, {id}
+  redeem-commands:
+    - 'lp user {player} permission set {permission} true'
+
+gui:
+  title: ' &#127D5A&l✦ &#127D5A&lJ&#12795D&lO&#127560&lI&#127164&lN &#126D67&lM&#12696A&lE&#12646D&lS&#126070&lS&#125C73&lA&#125877&lG&#12547A&lE&#12507D&lS &#12507D&l✦'
+  rows: 6
+  equipped-glow: true
+  content-slots: ['10-16', '19-25', '28-34', '37-43']
+  decoration:
+    border:
+      material: GRAY_STAINED_GLASS_PANE
+      slots: ['1-3', '5-7', '9', '17-18', '26-27', '35-36', '44', '46-48', '50-52']
+    corners:
+      material: CYAN_STAINED_GLASS_PANE
+      slots: ['0', '8', '45', '53']
+  item-name: '{name}'
+  item-lore:
+    - ''
+    - ' &#91A0B5{description}'
+    - ''
+    - ' &#8B6BFF┃ &#E8EDF7On join:'
+    - '  {join}'
+    - ' &#8B6BFF┃ &#E8EDF7On leave:'
+    - '  {leave}'
+    - ''
+    - '{status}'
+    - '{action}'
+  status-equipped: ' &#45D6C6✔ Equipped'
+  status-not-equipped: ' &#5C6370✦ &#91A0B5Not equipped'
+  action-equipped: ' &#F06D76▶ Click to unequip!'
+  action-not-equipped: ' &#45D6C6▶ Click to equip!'
+  buttons:
+    current:
+      slot: 4
+      material: NAME_TAG
+      name: '&#E8EDF7&lJOIN MESSAGES'
+      lore:
+        - ''
+        - ' &#91A0B5Choose how the realm announces you'
+        - ' &#91A0B5when you join and leave the server.'
+        - ''
+        - ' &#8B6BFF┃ &#E8EDF7Equipped: {current}'
+        - ' &#8B6BFF┃ &#E8EDF7Unlocked: &#45D6C6{unlocked}&#5C6370/&#45D6C6{total}'
+        - ' &#8B6BFF┃ &#E8EDF7Page: &#45D6C6{page}&#5C6370/&#45D6C6{pages}'
+        - ''
+        - ' &#5C6370Get more from crates.'
+    clear:
+      slot: 47
+      material: BUCKET
+      name: '&#E8EDF7&lREMOVE MESSAGE'
+      lore:
+        - ''
+        - ' &#91A0B5Go back to the normal'
+        - ' &#91A0B5join and leave message.'
+        - ''
+        - ' &#F06D76▶ Click to remove!'
+    previous:
+      slot: 48
+      material: ARROW
+      name: '&#E8EDF7&lPREVIOUS PAGE'
+      lore:
+        - ''
+        - ' &#45D6C6▶ Click to go back!'
+    close:
+      slot: 49
+      material: BARRIER
+      name: '&#E8EDF7&lCLOSE'
+      lore:
+        - ''
+        - ' &#F06D76▶ Click to close!'
+    next:
+      slot: 50
+      material: ARROW
+      name: '&#E8EDF7&lNEXT PAGE'
+      lore:
+        - ''
+        - ' &#45D6C6▶ Click to go forward!'
+    empty:
+      slot: 22
+      material: PAPER
+      name: '&#E8EDF7&lNO MESSAGES'
+      lore:
+        - ''
+        - ' &#91A0B5You don''t have any join messages yet.'
+        - ' &#91A0B5Get them from crates.'
+
+lang:
+  prefix: '&#8B6BFF&lJOIN&#69E7FF&lMESSAGES &#5C6370» '
+  none: '&#5C6370None'
+  equipped: '&#91A0B5You equipped {name}&#91A0B5.'
+  unequipped: '&#91A0B5You unequipped {name}&#91A0B5.'
+  cleared: '&#91A0B5You are now using the normal join and leave message.'
+  no-permission: '&#F06D76You don''t have permission to do that.'
+  players-only: '&#F06D76Only players can use this.'
+  reloaded: '&#91A0B5Config reloaded. &#5C6370({count} messages)'
+  player-not-found: '&#F06D76Player not found.'
+  unknown-message: '&#F06D76Message &#E8EDF7{id}&#F06D76 does not exist.'
+  admin-set: '&#91A0B5&#E8EDF7{player}&#91A0B5''s message: {name}&#91A0B5.'
+  admin-reset: '&#91A0B5Removed &#E8EDF7{player}&#91A0B5''s message.'
+  admin-no-access: '&#91A0B5&#E8EDF7{player}&#91A0B5 doesn''t have the permission; it won''t show until they do.'
+  voucher-given: '&#91A0B5Gave &#E8EDF7{amount}x&#91A0B5 {name}&#91A0B5 voucher to &#E8EDF7{player}&#91A0B5.'
+  voucher-redeemed: '&#91A0B5You unlocked {name}&#91A0B5!'
+  voucher-already: '&#F06D76You already have {name}&#F06D76.'
+  voucher-invalid: '&#F06D76This voucher is no longer valid.'
+  list-header: '&#91A0B5Configured messages:'
+  list-entry: ' &#8B6BFF┃ &#E8EDF7{id} &#5C6370({permission})'
+  usage:
+    - ' &#8B6BFF┃ &#45D6C6/jm &#5C6370- &#91A0B5open the menu'
+    - ' &#8B6BFF┃ &#45D6C6/jm clear &#5C6370- &#91A0B5remove your message'
+    - ' &#8B6BFF┃ &#45D6C6/jm set <player> <id> &#5C6370- &#91A0B5set a message'
+    - ' &#8B6BFF┃ &#45D6C6/jm reset <player> &#5C6370- &#91A0B5remove someone''s message'
+    - ' &#8B6BFF┃ &#45D6C6/jm voucher <id> [player] [amount] &#5C6370- &#91A0B5give a voucher'
+    - ' &#8B6BFF┃ &#45D6C6/jm list &#5C6370- &#91A0B5list the ids'
+    - ' &#8B6BFF┃ &#45D6C6/jm reload &#5C6370- &#91A0B5reload'
+
+messages:
+  knight:
+    permission: "customjoin.message.knight"
+    name: '&#C9D3E0&lWANDERING KNIGHT'
+    material: IRON_SWORD
+    description:
+      - 'Honor, steel and oath.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 draws their sword and enters the realm.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 sheathes their sword and retires to rest.'
+
+  archmage:
+    permission: "customjoin.message.archmage"
+    name: '&#B66DFF&lARCHMAGE'
+    material: AMETHYST_SHARD
+    description:
+      - 'Master of the arcane arts.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 appears in a flash of arcane light.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 vanishes in a whirlwind of runes.'
+
+  necromancer:
+    permission: "customjoin.message.necromancer"
+    name: '&#9B7BC4&lNECROMANCER'
+    material: WITHER_SKELETON_SKULL
+    description:
+      - 'The dead answer their call.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 has returned... and brought the undead along.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 leaves and the dead return to their graves.'
+
+  dragon:
+    permission: "customjoin.message.dragon"
+    name: '&#9B30FF&lDRAGON RIDER'
+    material: DRAGON_HEAD
+    description:
+      - 'Straight from the skies.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 descends from the sky riding a dragon.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 takes flight and disappears into the clouds.'
+
+  royalty:
+    permission: "customjoin.message.royalty"
+    name: '&#E7B967&lROYALTY'
+    material: GOLDEN_HELMET
+    description:
+      - 'Royal blood runs through their veins.'
+    join: '&#91A0B5Make way! {prefix}&#E8EDF7{player}&#91A0B5 has arrived in the realm.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 leaves the throne for today.'
+
+  shadow:
+    permission: "customjoin.message.shadow"
+    name: '&#8A8FA8&lSHADOW ASSASSIN'
+    material: BLACK_DYE
+    description:
+      - 'Silence, stealth and a dagger.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 emerges from the shadows... nobody noticed.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 fades into the darkness.'
+
+  vampire:
+    permission: "customjoin.message.vampire"
+    name: '&#D2465A&lVAMPIRE LORD'
+    material: REDSTONE
+    description:
+      - 'The night belongs to them.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 rises from their coffin, thirsty for blood.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 flees before dawn.'
+
+  pirate:
+    permission: "customjoin.message.pirate"
+    name: '&#45D6C6&lPIRATE OF THE SEAS'
+    material: HEART_OF_THE_SEA
+    description:
+      - 'The sea is their home.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 docks at the port with their crew.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 weighs anchor and sets sail for new adventures.'
+
+  storm:
+    permission: "customjoin.message.storm"
+    name: '&#69E7FF&lSTORM LORD'
+    material: LIGHTNING_ROD
+    description:
+      - 'The sky roars as they pass.'
+    join: '&#91A0B5Thunder rumbles... {prefix}&#E8EDF7{player}&#91A0B5 has arrived.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 disappears in a flash of lightning.'
+
+  frost:
+    permission: "customjoin.message.frost"
+    name: '&#A9E4FF&lHEART OF ICE'
+    material: BLUE_ICE
+    description:
+      - 'Cold as the north.'
+    join: '&#91A0B5An icy breeze announces {prefix}&#E8EDF7{player}&#91A0B5''s arrival.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 leaves and takes winter with them.'
+
+  phoenix:
+    permission: "customjoin.message.phoenix"
+    name: '&#FF8A3D&lPHOENIX'
+    material: BLAZE_POWDER
+    description:
+      - 'Always rises from the ashes.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 rises from their ashes.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 burns away in flames... but will return.'
+
+  druid:
+    permission: "customjoin.message.druid"
+    name: '&#7BD88F&lFOREST DRUID'
+    material: OAK_SAPLING
+    description:
+      - 'Guardian of nature.'
+    join: '&#91A0B5The forest blooms: {prefix}&#E8EDF7{player}&#91A0B5 has arrived.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 returns to the heart of the forest.'
+
+  miner:
+    permission: "customjoin.message.miner"
+    name: '&#7FD6E8&lLEGENDARY MINER'
+    material: DIAMOND_PICKAXE
+    description:
+      - 'Nobody digs deeper.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 walks out of the mine with pockets full of diamonds.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 heads down the mine... they might not come back.'
+
+  hunter:
+    permission: "customjoin.message.hunter"
+    name: '&#B8C97A&lHUNTER'
+    material: BOW
+    description:
+      - 'No prey escapes them.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 arrives with a drawn bow, looking for prey.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 follows the trail of their next prey.'
+
+  paladin:
+    permission: "customjoin.message.paladin"
+    name: '&#F5E6A8&lHOLY PALADIN'
+    material: TOTEM_OF_UNDYING
+    description:
+      - 'Blessed by the light.'
+    join: '&#91A0B5Holy light shines upon {prefix}&#E8EDF7{player}&#91A0B5.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 leaves on a holy crusade.'
+
+  infernal:
+    permission: "customjoin.message.infernal"
+    name: '&#F06D76&lNETHER DEMON'
+    material: MAGMA_CREAM
+    description:
+      - 'Forged in eternal fire.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 emerges from a Nether portal.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 returns to the depths of the Nether.'
+
+  ender:
+    permission: "customjoin.message.ender"
+    name: '&#C77DFF&lEND WANDERER'
+    material: ENDER_PEARL
+    description:
+      - 'Between dimensions.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 teleports into the realm.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 vanishes in a cloud of End particles.'
+
+  bard:
+    permission: "customjoin.message.bard"
+    name: '&#FF8FD8&lTAVERN BARD'
+    material: JUKEBOX
+    description:
+      - 'Every arrival deserves a song.'
+    join: '&#91A0B5The lutes play: {prefix}&#E8EDF7{player}&#91A0B5 has arrived at the tavern.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 finishes their song and says goodbye.'
+
+  alchemist:
+    permission: "customjoin.message.alchemist"
+    name: '&#9FE870&lMAD ALCHEMIST'
+    material: BREWING_STAND
+    description:
+      - 'Something is bubbling in their cauldron.'
+    join: '{prefix}&#E8EDF7{player}&#91A0B5 arrives smelling of strange potions.'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 goes back to their lab... something is about to explode.'
+
+  legend:
+    permission: "customjoin.message.legend"
+    name: '&#B66DFF&lLIVING LEGEND'
+    material: NETHER_STAR
+    description:
+      - 'Their name is sung across the realm.'
+    join: '&#91A0B5{prefix}&#E8EDF7{player}&#91A0B5, the legend, has returned to the realm!'
+    leave: '{prefix}&#E8EDF7{player}&#91A0B5 leaves... but legends never die.'

@@ -1,0 +1,18 @@
+name: CustomJoinMessages
+version: ${project.version}
+main: me.customjoin.CustomJoinMessages
+api-version: '1.20'
+description: Permission-based custom join/leave messages with a GUI selector.
+softdepend: [Essentials, DiscordSRV, LuckPerms, PlaceholderAPI]
+commands:
+  joinmessages:
+    description: Open the join/leave message menu.
+    aliases: [jm, joinmsg, joinmessage]
+    usage: /<command> [clear|reload|set|reset|list|voucher]
+permissions:
+  customjoin.use:
+    description: Open the menu and equip available messages.
+    default: true
+  customjoin.admin:
+    description: Reload the config and manage other players' messages.
+    default: op
