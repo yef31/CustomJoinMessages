@@ -9,7 +9,7 @@ Permission-based custom join/leave messages for Spigot/Paper, with a GUI so play
 - **Rank prefixes**: `{prefix}` / `{suffix}` come from LuckPerms automatically. `settings.prefix-format` can replace them with any text.
 - **PlaceholderAPI**: any placeholder works inside messages.
 - **DiscordSRV**: join/leave messages are posted to Discord as an embed with the player's head, or as plain text. DiscordSRV's own join/leave messages are turned off automatically, so there are no duplicates.
-- **Vouchers**: `/jm voucher <id>` gives an item that unlocks and equips a message on right-click.
+- **Vouchers**: `/jm voucher <id>` gives an item that unlocks and equips a message on right-click. Its lore previews the join/leave message, so players know what they are trading.
 - **EssentialsX friendly**: the plugin runs after Essentials and warns in console if Essentials still has its own join/quit message.
 - Hex colors (`&#RRGGBB`) and legacy `&` codes.
 

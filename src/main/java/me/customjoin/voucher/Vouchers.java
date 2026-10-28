@@ -43,9 +43,16 @@ public final class Vouchers {
             return item;
         }
         meta.setDisplayName(Text.color(plugin.getConfig().getString("vouchers.name", "{name}").replace("{name}", message.name())));
+        String previewName = plugin.getConfig().getString("vouchers.preview-player", "Player");
+        String join = preview(message.join(), previewName);
+        String leave = preview(message.leave(), previewName);
         List<String> lore = new ArrayList<>();
         for (String line : plugin.getConfig().getStringList("vouchers.lore")) {
-            lore.add(Text.color(line.replace("{name}", message.name()).replace("{id}", message.id())));
+            lore.add(Text.color(Lang.replace(line,
+                    "{name}", message.name(),
+                    "{id}", message.id(),
+                    "{join}", join,
+                    "{leave}", leave)));
         }
         meta.setLore(lore);
         if (plugin.getConfig().getBoolean("vouchers.glow", true)) {
@@ -59,6 +66,19 @@ public final class Vouchers {
         meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, message.id());
         item.setItemMeta(meta);
         return item;
+    }
+
+    /** Vouchers get traded, so the preview uses a neutral name and drops rank prefixes and placeholders. */
+    private static String preview(String input, String name) {
+        if (input == null) {
+            return "";
+        }
+        return input.replace("{player}", name)
+                .replace("{displayname}", name)
+                .replace("{prefix}", "")
+                .replace("{suffix}", "")
+                .replaceAll("%[^%\\s]+%", "")
+                .trim();
     }
 
     /** The message id stored on the item, or null if it isn't a voucher. */

@@ -43,7 +43,14 @@ vouchers:
     - ''
     - ' &#91A0B5Unlocks a new join message.'
     - ''
+    - ' &#8B6BFF┃ &#E8EDF7On join:'
+    - '  {join}'
+    - ' &#8B6BFF┃ &#E8EDF7On leave:'
+    - '  {leave}'
+    - ''
     - ' &#45D6C6▶ Right-click to redeem!'
+  # Name shown for {player} in the {join}/{leave} preview (vouchers can be traded, so it isn't the holder's name)
+  preview-player: 'Player'
   glow: true
   # Equip the message right after redeeming it
   auto-equip: true
