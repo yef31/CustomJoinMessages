@@ -1,6 +1,6 @@
-package me.customjoin.util;
+package com.yeferson31.customjoin.util;
 
-import me.customjoin.hook.Prefixes;
+import com.yeferson31.customjoin.hook.Prefixes;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 

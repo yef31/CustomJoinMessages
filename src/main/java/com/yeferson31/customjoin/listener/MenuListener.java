@@ -1,9 +1,9 @@
-package me.customjoin.listener;
+package com.yeferson31.customjoin.listener;
 
-import me.customjoin.CustomJoinMessages;
-import me.customjoin.gui.MessageMenu;
-import me.customjoin.message.JoinMessage;
-import me.customjoin.util.Lang;
+import com.yeferson31.customjoin.CustomJoinMessages;
+import com.yeferson31.customjoin.gui.MessageMenu;
+import com.yeferson31.customjoin.message.JoinMessage;
+import com.yeferson31.customjoin.util.Lang;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

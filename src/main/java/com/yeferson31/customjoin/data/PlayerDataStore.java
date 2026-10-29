@@ -1,6 +1,6 @@
-package me.customjoin.data;
+package com.yeferson31.customjoin.data;
 
-import me.customjoin.CustomJoinMessages;
+import com.yeferson31.customjoin.CustomJoinMessages;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 

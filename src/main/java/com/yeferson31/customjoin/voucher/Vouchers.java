@@ -1,9 +1,9 @@
-package me.customjoin.voucher;
+package com.yeferson31.customjoin.voucher;
 
-import me.customjoin.CustomJoinMessages;
-import me.customjoin.message.JoinMessage;
-import me.customjoin.util.Lang;
-import me.customjoin.util.Text;
+import com.yeferson31.customjoin.CustomJoinMessages;
+import com.yeferson31.customjoin.message.JoinMessage;
+import com.yeferson31.customjoin.util.Lang;
+import com.yeferson31.customjoin.util.Text;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;

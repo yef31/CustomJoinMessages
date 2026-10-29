@@ -1,6 +1,6 @@
-package me.customjoin.hook;
+package com.yeferson31.customjoin.hook;
 
-import me.customjoin.CustomJoinMessages;
+import com.yeferson31.customjoin.CustomJoinMessages;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.cacheddata.CachedMetaData;
 import net.luckperms.api.model.user.User;

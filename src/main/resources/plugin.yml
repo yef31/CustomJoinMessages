@@ -1,6 +1,6 @@
 name: CustomJoinMessages
 version: ${project.version}
-main: me.customjoin.CustomJoinMessages
+main: com.yeferson31.customjoin.CustomJoinMessages
 api-version: '1.20'
 description: Permission-based custom join/leave messages with a GUI selector.
 softdepend: [Essentials, DiscordSRV, LuckPerms, PlaceholderAPI]

@@ -1,6 +1,6 @@
-package me.customjoin.message;
+package com.yeferson31.customjoin.message;
 
-import me.customjoin.CustomJoinMessages;
+import com.yeferson31.customjoin.CustomJoinMessages;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;

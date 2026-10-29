@@ -1,14 +1,14 @@
-package me.customjoin;
+package com.yeferson31.customjoin;
 
-import me.customjoin.command.JoinMessagesCommand;
-import me.customjoin.data.PlayerDataStore;
-import me.customjoin.hook.DiscordHook;
-import me.customjoin.hook.Prefixes;
-import me.customjoin.listener.ConnectionListener;
-import me.customjoin.listener.MenuListener;
-import me.customjoin.listener.VoucherListener;
-import me.customjoin.message.MessageRegistry;
-import me.customjoin.voucher.Vouchers;
+import com.yeferson31.customjoin.command.JoinMessagesCommand;
+import com.yeferson31.customjoin.data.PlayerDataStore;
+import com.yeferson31.customjoin.hook.DiscordHook;
+import com.yeferson31.customjoin.hook.Prefixes;
+import com.yeferson31.customjoin.listener.ConnectionListener;
+import com.yeferson31.customjoin.listener.MenuListener;
+import com.yeferson31.customjoin.listener.VoucherListener;
+import com.yeferson31.customjoin.message.MessageRegistry;
+import com.yeferson31.customjoin.voucher.Vouchers;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -72,7 +72,7 @@ public final class CustomJoinMessages extends JavaPlugin {
     public void onDisable() {
         // Close open menus so nobody keeps an item-stealable inventory after a reload
         for (Player player : getServer().getOnlinePlayers()) {
-            if (player.getOpenInventory().getTopInventory().getHolder() instanceof me.customjoin.gui.MessageMenu) {
+            if (player.getOpenInventory().getTopInventory().getHolder() instanceof com.yeferson31.customjoin.gui.MessageMenu) {
                 player.closeInventory();
             }
         }

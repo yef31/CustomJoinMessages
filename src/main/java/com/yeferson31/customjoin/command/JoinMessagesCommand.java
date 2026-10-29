@@ -1,10 +1,10 @@
-package me.customjoin.command;
+package com.yeferson31.customjoin.command;
 
-import me.customjoin.CustomJoinMessages;
-import me.customjoin.gui.MessageMenu;
-import me.customjoin.message.JoinMessage;
-import me.customjoin.util.Lang;
-import me.customjoin.util.Text;
+import com.yeferson31.customjoin.CustomJoinMessages;
+import com.yeferson31.customjoin.gui.MessageMenu;
+import com.yeferson31.customjoin.message.JoinMessage;
+import com.yeferson31.customjoin.util.Lang;
+import com.yeferson31.customjoin.util.Text;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

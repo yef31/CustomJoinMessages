@@ -1,4 +1,4 @@
-package me.customjoin.message;
+package com.yeferson31.customjoin.message;
 
 import org.bukkit.Material;
 
